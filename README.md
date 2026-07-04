@@ -130,8 +130,7 @@ Below is a comparison of validation performance evaluated on the unseen `barrenl
 
 | Configuration | PSNR (dB) ↑ | SSIM ↑ | LPIPS ↓ | FID ↓ |
 | :--- | :---: | :---: | :---: | :---: |
-| **Baseline (L1 Only)** | 12.7040 | 0.2211 | 0.8429
- | 35.0236 |
+| **Baseline (L1 Only)** | 12.7040 | 0.2211 | 0.8429| 35.0236 |
 | **Full Attention cGAN** | 12.5969 | 0.1664 | 0.7002 | 9.7085 |
 
 *\*Note: In the final notebook run, quantitative metrics were evaluated strictly for the finalized Full Attention cGAN model. The Baseline L1 model was trained as a control group for convergence analysis (loss curves comparison), showing a blurry, mean-seeking convergence compared to the crisp outputs of the hybrid configuration.*
