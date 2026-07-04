@@ -1,0 +1,26 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Project-specific large files and data directories
+sar_eo_data/
+weights/
+logs/*.csv
+plots/*.png
+qualitative_runs/
+delivery_package/
+*.zip
+*.pth

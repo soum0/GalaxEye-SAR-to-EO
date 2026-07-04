@@ -1,0 +1,44 @@
+project_name: "GalaxEye_SAR2EO"
+
+model:
+  generator: "Attention U-Net"
+  discriminator: "PatchGAN (70x70)"
+  generator_params: 29564548
+  discriminator_params: 2765760
+
+data:
+  base_path: "sar_eo_data/v_2"
+  train_terrains:
+    - "agri"
+    - "grassland"
+    - "urban"
+  val_terrains:
+    - "barrenland" # Isolated terrain to prevent spatial data leakage
+  image_size: 256
+  normalization:
+    mean: [0.5, 0.5, 0.5] # normalized to [-1, 1] range
+    std: [0.5, 0.5, 0.5]
+  augmentations:
+    - "horizontal_flip" # Synchronized geometric flipping
+    - "vertical_flip"
+
+training:
+  epochs: 20 # Completed epochs in notebook final run (Config target: 80 epochs)
+  batch_size: 16
+  optimizer:
+    type: "Adam"
+    lr: 0.0002
+    beta1: 0.5
+    beta2: 0.999
+  loss_weights:
+    lambda_l1: 100 # Pixel-level low-frequency reconstruction loss
+    lambda_perceptual: 10 # Deep feature consistency loss (VGG16)
+    lambda_adversarial: 1.0 # PatchGAN adversarial loss
+  loss_functions:
+    - "L1"
+    - "Adversarial"
+    - "Perceptual"
+
+hardware:
+  device: "cuda"
+  seed: 42

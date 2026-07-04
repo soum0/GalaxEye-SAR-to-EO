@@ -1,0 +1,27 @@
+data:
+  augmentations:
+  - horizontal_flip
+  - random_crop
+  base_path: sar_eo_data/v_2
+  image_size: 256
+  train_terrains:
+  - agri
+  - grassland
+  - urban
+  val_terrains:
+  - barrenland
+hardware:
+  device: cuda
+  seed: 42
+project_name: GalaxEye_SAR2EO
+training:
+  batch_size: 16
+  beta1: 0.5
+  beta2: 0.999
+  epochs: 80
+  learning_rate: 0.0002
+  loss_functions:
+  - L1
+  - Adversarial
+  - Perceptual
+  optimizer: Adam
