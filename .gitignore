@@ -19,8 +19,6 @@ Thumbs.db
 sar_eo_data/
 weights/
 logs/*.csv
-plots/*.png
-qualitative_runs/
 delivery_package/
 *.zip
 *.pth
