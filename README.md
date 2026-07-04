@@ -120,7 +120,7 @@ This script evaluates predictions on the validation/test holdout using the same 
 
 ## Model Weights
 
-[INSERT PUBLIC GOOGLE DRIVE LINK HERE]
+(https://drive.google.com/file/d/1JqpactY6DiRhTHFueO6slHA-rPxzbo3u/view?usp=sharing)
 
 ---
 
@@ -146,19 +146,3 @@ Below is a comparison of validation performance evaluated on the unseen `barrenl
 
 
 
-## 8. Artifacts & Deliverables
-
-To ensure full reproducibility and transparency, all project artifacts have been logged and made available.
-
-### Model Weights
-The final converged generator weights (`Full_cGAN_Gen_Epoch_20.pth`) used for the quantitative evaluation above are hosted publicly. 
-* **Download Checkpoint:** https://drive.google.com/file/d/1JqpactY6DiRhTHFueO6slHA-rPxzbo3u/view?usp=sharing
-
-### Training Logs & Plots
-The loss dynamics comparing the baseline $L1$ configuration against the competitive adversarial min-max game are documented here:
-* **Loss Curves:** [`plots/loss_curves_ablation.png`](./plots/loss_curves_ablation.png)
-* **Raw CSV Logs:** [`logs/Full_cGAN_losses.csv`](./logs/Full_cGAN_losses.csv)
-
-### Qualitative Visualizations
-A sample of generated triplets (SAR Input $\rightarrow$ Generated EO $\rightarrow$ Ground Truth EO) evaluated on the unseen `barrenland` holdout split can be viewed in the repository:
-* **Visual Results:** [View the `qualitative_runs/` directory](./qualitative_runs/)
